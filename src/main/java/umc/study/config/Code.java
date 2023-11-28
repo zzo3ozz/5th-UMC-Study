@@ -32,7 +32,8 @@ public enum Code {
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
 
     // For test
-    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트");
+    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트"),
+    FOOD_CATEGORY_ERROR(HttpStatus.BAD_REQUEST, "FD4001", "food category 저장 에러");
 
     private final HttpStatus httpStatus;
     private final String code;
