@@ -31,11 +31,9 @@ public class MasterExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternalConstraint(e, Code.valueOf(errorMessage), HttpHeaders.EMPTY,request);
     }
 
-
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException e, HttpHeaders headers, HttpStatus status, WebRequest request) {
-
         Map<String, String> errors = new LinkedHashMap<>();
 
         e.getBindingResult().getFieldErrors().stream()
