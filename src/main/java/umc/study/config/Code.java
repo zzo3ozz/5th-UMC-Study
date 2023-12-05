@@ -30,6 +30,10 @@ public enum Code {
     // Store Error
     STORE_NOT_FOUND(HttpStatus.BAD_REQUEST, "STORE4001", "가게가 존재하지 않습니다."),
 
+    // Mission Error
+    MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MISSION4001", "미션이 존재하지 않습니다."),
+    MISSION_ALREADY_CHALLENGING(HttpStatus.BAD_REQUEST, "MISSON4002", "이미 도전중인 미션입니다."),
+
     // Article Error
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
 
