@@ -1,6 +1,8 @@
 package umc.study.domain.member.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.study.domain.common.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -11,6 +13,8 @@ import java.util.List;
 @Entity
 @Getter
 @Builder
+@DynamicInsert
+@DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Member extends BaseEntity {

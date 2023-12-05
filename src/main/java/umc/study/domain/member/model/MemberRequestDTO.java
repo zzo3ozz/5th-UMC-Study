@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import umc.study.domain.validation.annotation.ExistCategories;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class MemberRequestDTO {
         String birth;
         String address;
         String specAddress;
+        @ExistCategories
         List<Long> preferCategory;
     }
 }

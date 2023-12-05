@@ -12,6 +12,8 @@ import umc.study.domain.member.entity.Member;
 import umc.study.domain.member.model.MemberRequestDTO;
 import umc.study.domain.member.model.MemberResponseDTO;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/members")
@@ -19,9 +21,11 @@ public class MemberController {
     private final MemberCommandService memberCommandService;
 
     @PostMapping("/")
-    public ResponseDto<MemberResponseDTO.JoinResultDTO> join(@RequestBody MemberRequestDTO.JoinRequestDTO request) {
+    public ResponseDto<MemberResponseDTO.JoinResultDTO> join(@RequestBody @Valid MemberRequestDTO.JoinRequestDTO request) {
+        System.out.println("test");
+
         Member member = memberCommandService.joinMember(request);
 
-        return ResponseDto.onSuccess(MemberConverter.toJoinResultDTO(member), Code.OK);
+        return ResponseDto.onSuccess(MemberConverter.toJoinResultDTO(member));
     }
 }

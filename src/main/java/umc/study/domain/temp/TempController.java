@@ -18,12 +18,12 @@ public class TempController {
 
     @GetMapping("/test")
     public ResponseDto<TempResponse.TempTestDTO> testAPI(){
-        return ResponseDto.onSuccess(TempConverter.toTempTestDTO(), Code.OK);
+        return ResponseDto.onSuccess(TempConverter.toTempTestDTO());
     }
 
     @GetMapping("/exception")
     public ResponseDto<TempResponse.TempExceptionDTO> exceptionAPI(@RequestParam Integer flag){
         tempQueryService.CheckFlag(flag);
-        return ResponseDto.onSuccess(TempConverter.toTempExceptionDTO(flag), Code.OK);
+        return ResponseDto.onSuccess(TempConverter.toTempExceptionDTO(flag));
     }
 }

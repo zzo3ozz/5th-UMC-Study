@@ -19,9 +19,14 @@ public class MemberConverter {
     }
 
     public static Member toMember(MemberRequestDTO.JoinRequestDTO request) {
+        Member.Gender gender = null;
+
+        if(request.getName().equals("FEMALE") || request.getName().equals("MALE") )
+            gender = Member.Gender.valueOf(request.getGender());
+
         return Member.builder()
                 .name(request.getName())
-                .gender(Member.Gender.valueOf(request.getGender()))
+                .gender(gender)
                 .address(request.getAddress())
                 .specAddress(request.getSpecAddress())
                 .memberPreferList(new ArrayList<>())
