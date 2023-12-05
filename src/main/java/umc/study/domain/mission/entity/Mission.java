@@ -2,6 +2,7 @@ package umc.study.domain.mission.entity;
 
 import lombok.*;
 import umc.study.domain.common.entity.BaseEntity;
+import umc.study.domain.store.entity.Store;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -16,7 +17,9 @@ public class Mission extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long store_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "store_id")
+    private Store store;
 
     private Integer reward;
 
